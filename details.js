@@ -14,7 +14,7 @@ module.exports = {
       CUsername:"gigigf",
       PrivateKey: "202af84ec5012c7fd8cfd59618aaaa9354bdc20d03f7194172a522e3a76deb08",
       USDT_RECIVER: "TKjKd4aJVQwhshsnXXh6BT6HWpDheWyPhP",
-    appname: "https://tethertron.up.railway.app",
+    appname: "https://tethermine-monika359b.b4a.run",
     aboutmsg: "👋 Welcome to our Platform!\n\nWe are a team of experienced traders and cryptocurrency experts who have come together to create a platform that allows you to easily invest your 💰TRX and earn attractive returns.\n\n💻 Our platform is built on cutting-edge technology, ensuring a seamless investment experience with real-time updates on your portfolio's performance.\n\n🔒 We use advanced security measures, such as two-factor authentication and SSL encryption, to protect your investments and personal information from unauthorized access and theft.\n\n📈 At our platform, we believe in transparency and honesty. That's why we provide detailed information on our investment plans, so you can make informed decisions and monitor your returns. We also offer a dedicated support team to assist you with any questions or concerns you may have.\n\n💡 Whether you're a seasoned investor or new to the world of cryptocurrency, our team of experts is here to help you navigate the market and maximize your returns. We offer a variety of investment options, including mining and staking income, so you can choose the strategy that works best for you.\n\nThank you for choosing us. We boldly look forward to helping you achieve your financial goals! 💪",
     deposit_text:`👋 Welcome to our Investment Bot!
 

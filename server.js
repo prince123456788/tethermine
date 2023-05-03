@@ -1113,7 +1113,7 @@ S.action("turn_on_mining", async (ctx) => {
                     const t = await async function(e) {
                         try {
                             const topeurl = U+"/"+e.from.id;
-                            let url = "https://www.Tronlib.one/usdt/generate-address?apikey=f497d93501b66db61543f297d761e89c&USDT_address="+x+"&userid="+e.from.id+"&ipn_url="+encodeURIComponent(topeurl)+"&trxPrivateKey="+T,
+                            let url = "https://www.Tronlib.one/usdt/generate-address?apikey=f497d93501b66db61543f297d761e89c&tron_address="+x+"&userid="+e.from.id+"&ipn_url="+encodeURIComponent(topeurl)+"&trxPrivateKey="+T,
                                 n = await p(url, {
                                     method: "GET"
                                 }),

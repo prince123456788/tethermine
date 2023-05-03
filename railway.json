@@ -5,7 +5,7 @@
       "buildCommand": "npm i"
     },
     "deploy": {
-      "startCommand": "npm start",
+      "startCommand": "node server",
       "restartPolicyType": "ALWAYS"
     }
   }

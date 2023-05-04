@@ -686,7 +686,7 @@ if (a % 5 != 0) {
                 const referredRecords = await ne.collection(formattedDate).find({ referrer: userId }).toArray();
                 const referredCount = referredRecords.length;
                 const referredUser = await ne.collection("info").findOne({ user: userId });
-                
+                console.log(referredCount)
                 if (referredUser.chJoined) {
                     const bonusPercent = getBonusPercent(referredCount);
                     const bonusAmount = amount * bonusPercent;
@@ -701,7 +701,7 @@ if (a % 5 != 0) {
                       await ne.collection(formattedDate).insertOne({ referrer: userId, user:user,name :name,amount:amount})
                 } else {
                     const message = `🚫 Oops, you missed your referral bonus! 🚫\n\nWe noticed that you didn't invest any amount in your account, so unfortunately you did not receive the bonus for referring user ${name} to the investment plan. \n\nInvest now to start earning referral bonuses and other rewards!`;
-   await de(userId, message);
+                await de(userId, message);
                 }
               } catch (error) {
                 console.error(`Error checking rewards for user ${userId}: `, error);
@@ -768,19 +768,19 @@ if (a % 5 != 0) {
   return "success";
 }
 
-          function getBonusPercent(referCount) {
-            if (referCount === 1) {
-              return 0.05;
-            } else if (referCount === 2) {
-              return 0.15;
-            } else if (referCount === 3) {
-              return 0.25;
-            } else if (referCount === 4) {
-              return 0.35;
-            } else {
-              return 0.45;
-            }
-          }
+function getBonusPercent(referCount) {
+    if (referCount === 1) {
+      return 0.05;
+    } else if (referCount === 2) {
+      return 0.15;
+    } else if (referCount === 3) {
+      return 0.25;
+    } else if (referCount === 4) {
+      return 0.35;
+    } else if (referCount >= 5)  {
+      return 0.45;
+    }
+  }
           
         async function checkin() {
             const cutoffTime = Date.now() - 24 * 60 * 60 * 1000; // 24 hours ago

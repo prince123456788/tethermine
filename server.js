@@ -690,13 +690,14 @@ if (a % 5 != 0) {
                 if (referredUser.chJoined) {
                     const bonusPercent = getBonusPercent(referredCount);
                     const bonusAmount = amount * bonusPercent;
+                    console.log(bonusAmount , bonusPercent)
                     await ne.collection("info").updateOne(
                         { user: userId },
                         {
                           $inc: { balance: bonusAmount,totalProfit: bonusAmount ,totalAffiliateBonus: bonusAmount }
                         }
                       );
-                      const message = `🎉 Congratulations 🎉\n\nYou have received a bonus of ${bonusAmount.toFixed(2)} USDT which is ${bonusPercent}% of your referred user plan.\n\n🚀 Today your referral bonus is boosted to ${bonusPercent(referredCount+1)}% more! 🚀\n\nFor your next referral, your bonus will be boosted even higher! Keep referring more users to the bot to earn even more rewards.`;
+                      const message = `🎉 Congratulations 🎉\n\nYou have received a bonus of ${bonusAmount.toFixed(2)} USDT which is ${getBonusPercent(referredCount)*100}% of your referred user plan.\n\n🚀 Today your referral bonus is boosted to ${getBonusPercent(referredCount+1)*100}% more! 🚀\n\nFor your next referral, your bonus will be boosted even higher! Keep referring more users to the bot to earn even more rewards.`;
                       await de(userId, message);
                       await ne.collection(formattedDate).insertOne({ referrer: userId, user:user,name :name,amount:amount})
                 } else {
@@ -769,17 +770,17 @@ if (a % 5 != 0) {
 }
 
 function getBonusPercent(referCount) {
-    if (referCount === 1) {
+    if (referCount === 0) {
       return 0.05;
-    } else if (referCount === 2) {
+    } else if (referCount === 1) {
       return 0.15;
-    } else if (referCount === 3) {
+    } else if (referCount === 2) {
       return 0.25;
-    } else if (referCount === 4) {
+    } else if (referCount === 3) {
       return 0.35;
-    } else if (referCount >= 5)  {
+    } else if (referCount >= 4)  {
       return 0.45;
-    }
+    } 
   }
           
         async function checkin() {
@@ -884,7 +885,7 @@ function getBonusPercent(referCount) {
             const mining = miningList[idxMining];
             const startDate = new Date(mining.started_at).toLocaleString();
             const serverTime = new Date().toLocaleString();
-            message += `*${j + 1 + 10 * i})* Amount: ${mining.amount} USDT\nPlan: ${mining.plan}% Daily\nStart Date: ${startDate}\Daily Gain: ${mining.DailyGain} USDT\nStatus: ${mining.status}`;
+            message += `*${j + 1 + 10 * i})* Amount: ${mining.amount} USDT\nPlan: ${mining.plan}% Daily\nStart Date: ${startDate}\nDaily Gain: ${mining.amount*2/100} USDT\nStatus: ${mining.status}`;
             message += `\nTotal Investment Return: ${mining.total_profit} USDT\nAccumulated Return: ${mining.investment_return} USDT\nCredited: ${mining.yetcredited} USDT\nLast credited: ${new Date(mining.lastcdTime).toLocaleString()}\n`;
             message += `Server Time: ${serverTime}\n\n`;
             idxMining--;

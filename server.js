@@ -549,19 +549,7 @@ const text = "*💰 Investment Options 💸*\n\n🎉 *Your maximum investable am
   }), void await e.scene.leave(t);
 }
 
-if (a % 5 != 0) {
-  return await le(e.chat.id, e.message.message_id), await le(e.chat.id, e.message.message_id - 1), await ue(e, "*❌ Failed*\n\nYour entered Investment Amount of *" + a + " USDT* is not a round of 5. Please enter a valid amount (like 50,75,etc) to proceed.", {
-    reply_markup: {
-      inline_keyboard: [
-        [{
-          text: "↩️ Back",
-          callback_data: "backToInvest"
-        }]
-      ]
-    },
-    parse_mode: "markdown"
-  }), void await e.scene.leave(t);
-}
+
 
           
                 const n = await ne.collection("info").find({
@@ -1544,7 +1532,7 @@ S.action("turn_on_mining", async (ctx) => {
                 return;
               }
               // Round off investment amount to nearest 5 USDT
-              a = Math.round(a / 5) * 5;
+              a = Math.round(a / 1) * 1
               // Set investment plan parameters
               let investmentPlan = {
                 daily_percent: 2,
@@ -2357,14 +2345,7 @@ Maximum withdrawal amount is: ${t.toFixed()}`, {
                 }).toArray();
                 let n = 50
                 if ("⬅️ Back" == e.message.text) return we(e), void await e.scene.leave(a);
-                if (isNaN(e.message.text) || (parseFloat(e.message.text) % 5 != 0 && parseFloat(e.message.text) % 10 != 0)) {
-                    return e.replyWithMarkdown( "*🚫 Not A Valid Amount. Please enter an amount that is a round off of 5.\n(Example:- 55,100)*", {
-                        reply_markup: {
-                            keyboard: re,
-                            resize_keyboard: !0
-                        }
-                    }), void await e.scene.leave(a);
-                }
+               
                 if (parseFloat(n) > parseFloat(e.message.text)) return ue(e, "*⚠️ Minimum Withdraw Is " + n + " " + v + "*", {
                     reply_markup: {
                         keyboard: re,

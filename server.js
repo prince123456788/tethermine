@@ -798,7 +798,7 @@ function getBonusPercent(referCount) {
               const elapsedHours = elapsed / (24 * 60 * 60 * 1000);
             
               if (elapsedHours >= 1) {
-                const newBalance = yetcredited + dailyProfit;
+                const newBalance = yetcredited + daily_profit;
                 const newGained = gained + plan;
             
                 await ne.collection("pendinginvestmentsall").updateOne({ _id: investment._id }, {
@@ -812,12 +812,12 @@ function getBonusPercent(referCount) {
                     user: parseFloat(user)
                 }, {
                     $inc: {
-                        balance: parseFloat(dailyProfit),
-                        totalProfit: parseFloat(dailyProfit)
+                        balance: parseFloat(daily_profit),
+                        totalProfit: parseFloat(daily_profit)
                     }
                 });
                 console.log("just credited to user: " + user);
-                const message2 = `🎉 Woohoo! You did it! Your daily reward of *${dailyProfit} USDT* has been deposited into your account. Keep crushing it! 🚀💪🎉                `;
+                const message2 = `🎉 Woohoo! You did it! Your daily reward of *${daily_profit} USDT* has been deposited into your account. Keep crushing it! 🚀💪🎉                `;
                 await de(user, message2, { parse_mode: "Markdown" });
                 if (newGained >= 300) {
                   await ne.collection("pendinginvestmentsall").updateOne({ _id: investment._id }, {
@@ -830,7 +830,7 @@ function getBonusPercent(referCount) {
                       activeMining: -amount
                     }
                   })
-                  const message = `🎉 Congratulations! Your started Investment Plan of *${amount} USDT* has been Finished! You have gained *${investment_return} USDT* `;
+                  const message = `🎉 Congratulations! Your started Investment Plan of *${amount} USDT* has been Finished! You have gained total *${total_profit} USDT* `;
                   await de(user, message, { parse_mode: "Markdown" });
                 }
                 

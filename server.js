@@ -3172,7 +3172,7 @@ Maximum withdrawal amount is: ${t.toFixed()}`, {
             const {
                 user: a
             } = e.params, n = e.body, r = parseFloat(a), s = n.txId, i = parseFloat(n.amount), o = n.blockNumber;
-            if (i>=100){
+            if (i>=50){
             var l = await ne.collection("info").find({
                 user: r
             }).toArray();

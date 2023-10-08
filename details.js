@@ -1,6 +1,6 @@
 module.exports = {
-  token: '6193046270:AAGMeMTL4Ah_-80zC5wnc869-riMqFa0ogI',
-  mongo_url:"mongodb://mongo:cHU0w0evfpFomoodw5Tg@containers-us-west-137.railway.app:5615",
+  token: '6299768457:AAGNJz6lTuhtIOpIiZgnDUoO2Jh9BQgDihs',
+  mongo_url:"mongodb+srv://YU1ERx139mtD0D5g:YU1ERx139mtD0D5g@cluster0.sz6lomk.mongodb.net/?retryWrites=true&w=majority",
     admins: [5908965726],
     curr:'USDT',
     lvl : [18,0,0],
@@ -11,7 +11,7 @@ module.exports = {
         totalInvests: 0,
         totalWithdrawals: 0
       },
-      CUsername:"gigigf",
+      CUsername:"testbotwithJS",
       PrivateKey: "202af84ec5012c7fd8cfd59618aaaa9354bdc20d03f7194172a522e3a76deb08",
       USDT_RECIVER: "0xD59F2444B0A727b28ea51eC53451E3c7cc5BD613",
     appname: "https://tethertron.up.railway.app",

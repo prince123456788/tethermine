@@ -1,5 +1,5 @@
 module.exports = {
-  token: '6299768457:AAGNJz6lTuhtIOpIiZgnDUoO2Jh9BQgDihs',
+  token: '7477304211:AAGr4imyJvPXqOT8UVCEZJJyIZbDw5zc1AY',
   mongo_url:"mongodb+srv://YU1ERx139mtD0D5g:YU1ERx139mtD0D5g@cluster0.sz6lomk.mongodb.net/?retryWrites=true&w=majority",
     admins: [5908965726],
     curr:'USDT',
